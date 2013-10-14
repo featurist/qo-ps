@@ -1,7 +1,13 @@
 proc = require 'child_process'
 
-exports.exec! (args, ...) =
-    ps = proc.spawn (args, ...)
+exports.exec! (command, args, ...) =
+    options =
+        if (args.(args.length - 1) <: Object)
+            args.pop ()
+        else
+            {}
+
+    ps = proc.spawn (command, args, env: options.env, cwd: options.cwd)
 
     stdout = []
 
@@ -15,7 +21,13 @@ exports.exec! (args, ...) =
             continuation "`#(args)` exited with code #(code)"
 
 exports.spawn! (command, args, ...) =
-    ps = proc.spawn (command, args, stdio: 'inherit')
+    options =
+        if (args.(args.length - 1) <: Object)
+            args.pop ()
+        else
+            {}
+
+    ps = proc.spawn (command, args, stdio: 'inherit', env: options.env, cwd: options.cwd)
 
     ps.on 'close' @(code)
         continuation (nil, code)
