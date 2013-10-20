@@ -9,7 +9,8 @@
   "author": "Tim Macfarlane <timmacfarlane@gmail.com>",
   "license": "BSD-2-Clause",
   "devDependencies": {
-    "pogo": "~0.4.3"
+    "pogo": "~0.4.3",
+    "chai": "~1.8.1"
   },
   "dependencies": {
     "pogo": "~0.4.3"

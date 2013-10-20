@@ -2,7 +2,7 @@ proc = require 'child_process'
 
 exports.exec! (command, args, ...) =
     options =
-        if (args.(args.length - 1) <: Object)
+        if (args.(args.length - 1) :: Object)
             args.pop ()
         else
             {}
@@ -22,7 +22,7 @@ exports.exec! (command, args, ...) =
 
 exports.spawn! (command, args, ...) =
     options =
-        if (args.(args.length - 1) <: Object)
+        if (args.(args.length - 1) :: Object)
             args.pop ()
         else
             {}

@@ -13,7 +13,7 @@
         var args = Array.prototype.slice.call(gen1_arguments, 1, gen1_arguments.length);
         var options, ps, stdout;
         options = function() {
-            if ($3c$3a(args[args.length - 1], Object)) {
+            if (args[args.length - 1] instanceof Object) {
                 return args.pop();
             } else {
                 return {};
@@ -46,7 +46,7 @@
         var args = Array.prototype.slice.call(gen2_arguments, 1, gen2_arguments.length);
         var options, ps;
         options = function() {
-            if ($3c$3a(args[args.length - 1], Object)) {
+            if (args[args.length - 1] instanceof Object) {
                 return args.pop();
             } else {
                 return {};
