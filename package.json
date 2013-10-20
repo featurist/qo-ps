@@ -1,10 +1,10 @@
 {
   "name": "qo-ps",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "ERROR: No README data found!",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/*Spec.*"
   },
   "author": "Tim Macfarlane <timmacfarlane@gmail.com>",
   "license": "BSD-2-Clause",
