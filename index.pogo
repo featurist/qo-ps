@@ -1,6 +1,6 @@
 proc = require 'child_process'
 
-exports.exec! (command, args, ...) =
+exports.exec (command, args, ..., continuation) =
     options =
         if (args.(args.length - 1) :: Object)
             args.pop ()
@@ -18,9 +18,9 @@ exports.exec! (command, args, ...) =
         if (code == 0)
             continuation (nil, stdout.join '')
         else
-            continuation "`#(args)` exited with code #(code)"
+            continuation "`#(command) #(args)` exited with code #(code)"
 
-exports.spawn! (command, args, ...) =
+exports.spawn (command, args, ..., continuation) =
     options =
         if (args.(args.length - 1) :: Object)
             args.pop ()

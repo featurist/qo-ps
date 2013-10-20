@@ -10,7 +10,9 @@
   "license": "BSD-2-Clause",
   "devDependencies": {
     "pogo": "~0.4.3",
-    "chai": "~1.8.1"
+    "chai": "~1.8.1",
+    "mkdirp": "~0.3.5",
+    "rimraf": "~2.2.2"
   },
   "dependencies": {
     "pogo": "~0.4.3"
