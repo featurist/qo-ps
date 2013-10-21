@@ -18,7 +18,7 @@ exports.exec (command, args, ..., continuation) =
         if (code == 0)
             continuation (nil, stdout.join '')
         else
-            continuation "`#(command) #(args)` exited with code #(code)"
+            continuation (@new Error "`#(command) #(args.join ' ')` exited with code #(code)")
 
 exports.spawn (command, args, ..., continuation) =
     options =

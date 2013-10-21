@@ -28,7 +28,7 @@
             if (code === 0) {
                 continuation(void 0, stdout.join(""));
             } else {
-                continuation("`" + command + " " + args + "` exited with code " + code);
+                continuation(new Error("`" + command + " " + args.join(" ") + "` exited with code " + code));
             }
         });
     };

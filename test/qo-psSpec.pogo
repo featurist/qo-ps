@@ -13,6 +13,11 @@ describe 'qo-ps'
             ps.exec! 'pwd' (cwd: 'test/a/b/c').should.match r/\/a\/b\/c\n$/
             rimraf! 'test/a'
 
+        it 'executes a process in a given directory'
+            mkdirp! 'test/a/b/c'
+            ps.exec! 'ls' '-al' (cwd: '/').should.match r/\/a\/b\/c\n$/
+            rimraf! 'test/a'
+
     describe 'spawn'
         it 'executes a process inheriting the stdio'
             ps.exec! 'node' 'test/spawn.js' 'echo' 'hi'.should.equal "hi\ndone\n"
